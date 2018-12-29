@@ -1,2 +1,2 @@
 # OctodexImgDownloader
-It is designed to download all octodex image.
+It is designed to download all Octodex image.
