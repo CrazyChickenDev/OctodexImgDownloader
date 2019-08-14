@@ -1,2 +1,2 @@
 # OctodexImgDownloader
-It is designed to download all Octodex image.
+自动下载所有章鱼猫图片
