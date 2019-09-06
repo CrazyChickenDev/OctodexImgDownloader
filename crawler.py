@@ -1,7 +1,7 @@
 from urllib.request import urlopen, urlretrieve
 from bs4 import BeautifulSoup
 
-def img_url():
+def img_urls():
     soup = urlopen('https://octodex.github.com')
     content = BeautifulSoup(soup.read(), 'html.parser')
     img_urls = []
@@ -10,25 +10,22 @@ def img_url():
             img_urls.append('https://octodex.github.com' + link.get('data-src'))
     return img_urls
 
-def img_name():
+def img_names():
     soup = urlopen('https://octodex.github.com')
     content = BeautifulSoup(soup.read(), 'html.parser')
     img_names = []
-    for link in content.find_all('a'):
+    for link in content.find_all('a', attrs = {'class' : 'link-gray-dark text-bold'}):
         if link.text != None:
-            img_names.append(link.text)
-    print(img_names)
+            img_names.append(link.get_text())
     return img_names
 
 def img_download():
-        i = 0
-#     img_urls = img_url()
-#     img_names = img_name()
-#     i = 0
-#     for url in img_urls:
-#         urlretrieve(url, './Octodex/' + img_names[i] + '.jpg')
-#         i += 1
+    urls = img_urls()
+    names = img_names()
+    i = 0
+    for url in urls:
+        urlretrieve(url, './Octodex/' + names[i].strip() + '.jpg')
+        i += 1
 
 if __name__ == '__main__':
-#     img_download()
-   img_name()
+    img_download()
