@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from urllib.request import urlopen, urlretrieve
 from bs4 import BeautifulSoup
 
@@ -15,8 +17,8 @@ def img_names():
     content = BeautifulSoup(soup.read(), 'html.parser')
     img_names = []
     for link in content.find_all('a', attrs = {'class' : 'link-gray-dark text-bold'}):
-        if link.text != None:
-            img_names.append(link.get_text())
+        if link.string != None:
+            img_names.append(link.string.strip())
     return img_names
 
 def img_download():
@@ -24,7 +26,7 @@ def img_download():
     names = img_names()
     i = 0
     for url in urls:
-        urlretrieve(url, './Octodex/' + names[i].strip() + '.jpg')
+        urlretrieve(url, './Octodex/' + names[i] + '.jpg')
         i += 1
 
 if __name__ == '__main__':
