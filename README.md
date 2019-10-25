@@ -1,5 +1,5 @@
-# OctodexImgDownloader - download image from [Octodex](https://octodex.github.com)
-OctodexImgDownloader is a script, designed for download [Octodex](https://octodex.github.com) image.
+# OctodexImgDownloader - download all image from [Octodex](https://octodex.github.com)
+OctodexImgDownloader is a python script, designed for download all [Octodex](https://octodex.github.com) image.
 
 ## System requirements
 * Python 2.7.x
