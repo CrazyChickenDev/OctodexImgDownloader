@@ -1,11 +1,11 @@
-# OctodexImgDownloader
+## OctodexImgDownloader
 OctodexImgDownloader is a python script, designed for download all [Octodex](https://octodex.github.com) image.
 
-## System requirements
+### System requirements
 * Python 2.7.x
 * Python 3.x
 
-## Usage
+### Usage
 * Get source code from Github:
 ```
 git clone https://github.com/jrtx0/OctodexImgDownloader.git
@@ -14,7 +14,7 @@ git clone https://github.com/jrtx0/OctodexImgDownloader.git
 ``` python
 python3 crawler.py
 ```
-## Contribute
+### Contribute
 You are welcome to make code contributions.
 
 
